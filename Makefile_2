@@ -1,0 +1,134 @@
+########################################################################
+####################### Makefile Template ##############################
+########################################################################
+
+OPT = -O0
+# Armadillo
+## As the Armadillo library uses recursive templates, compilation times depend on the level of optimisation:
+##
+## -O0: quick compilation, but the resulting program will be slow
+## -O1: good trade-off between compilation time and execution speed
+## -O2: produces programs which have almost all possible speedups, but compilation takes longer
+## -O3: enables auto vectorisation when using gcc
+
+#OPT = -xO4 -xannotate=no
+## When using the Sun Studio compiler
+
+
+#EXTRA_OPT = -fwhole-program
+## Uncomment the above line if you're compiling all source files into one program in a single hit
+
+
+#DEBUG_ARMA = -DARMA_EXTRA_DEBUG
+## Uncomment the above line to enable low-level debugging.
+## Lots of debugging information will be printed when a compiled program is run.
+## Please enable this option when reporting bugs.
+
+
+#FINAL = -DARMA_NO_DEBUG
+## Uncomment the above line to disable Armadillo's checks.
+## Not recommended unless your code has been first thoroughly tested!
+
+ARMADILLO_LIB := -larmadillo
+#-------------------------------------------------------------------------------------------
+# Ceres 
+CERES_SRC_DIR := /usr/local/include/ # This should point to place where you unpacked or cloned Ceres.
+CERES_BIN_DIR := /usr/local/lib # This should point to the place where you built Ceres.
+EIGEN_SRC_DIR := /usr/include/eigen3 # The place you unpacked or cloned Eigen.
+CERES_INCLUDES := -I$(CERES_SRC_DIR) \
+                  -I$(EIGEN_SRC_DIR)
+CERES_LIBRARY := -lceres
+CERES_LIBRARY_PATH := -L$(CERES_BIN_DIR)
+CERES_LIBRARY_DEPENDENCIES = -lgflags -lglog
+# If Ceres was built with Suitesparse:
+CERES_LIBRARY_DEPENDENCIES +=  -llapack -lblas -lm -lcamd -lamd -lccolamd -lcolamd -lcholmod
+# If Ceres was built with CXSparse:
+CERES_LIBRARY_DEPENDENCIES += -lcxsparse
+# If Ceres was built with OpenMP:
+CERES_LIBRARY_DEPENDENCIES += -fopenmp -lpthread -lgomp -lm				  
+#-------------------------------------------------------------------------------------------
+# OpenCV
+OPENCV_SRC_DIR := /usr/local/include/opencv4/
+OPENCV = `pkg-config opencv --cflags --libs`
+OPENCVLIBRARIES = $(OPENCV)
+#-------------------------------------------------------------------------------------------
+# Python  (for ploting)
+PYTHON_SRC_DIR := /usr/include/python3.6
+PYTHON_BIN_DIR := /usr/lib/python3.6/config-3.6m-x86_64-linux-gnu
+PYTHON_LIB := -lpython3.6  
+
+
+#-------------------------------------------------------------------------------------------
+# SLAM (this app)
+SLAM_LIB_DEPENDENCIES := -lpthread
+SLAM_LIB_DEPENDENCIES_DIR := /usr/local/lib
+SLAM_LIB_DIR := lib
+SLAM_LIB_INCLUDE := include
+#BIN		:= bin
+#OBJ     := obj
+#SRC		:= src
+# Extra source code directories
+
+
+
+#-------------------------------------------------------------------------------------------
+DEBUG = -ggdb
+
+CXX		  := g++
+CXX_FLAGS := -Wall -Wextra -std=c++17 $(DEBUG) $(DEBUG_ARMA) $(FINAL) $(OPT) $(EXTRA_OPT)
+
+
+INCLUDE	:= -I$(SLAM_LIB_INCLUDE) -I$(OPENCV_SRC_DIR) -I$(PYTHON_SRC_DIR) $(CERES_INCLUDES)
+INCLUDE2 := 
+LIB		:= -L$(SLAM_LIB_DIR) -L$(SLAM_LIB_DEPENDENCIES_DIR) -L$(PYTHON_BIN_DIR) $(CERES_LIBRARY_PATH)
+
+
+LIBRARIES	:=  $(SLAM_LIB_DEPENDENCIES) $(ARMADILLO_LIB) $(PYTHON_LIB) $(CERES_LIBRARY) $(CERES_LIBRARY_DEPENDENCIES)
+
+EXECUTABLE	:= slam
+
+
+
+
+
+
+EXECUTABLE	:= slam
+BIN := bin 
+
+
+#SRCFILES := $(wildcard $(SRCDIR)/*.cpp) 
+#OBJFILES := $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRCFILES)) 
+#DEPFILES := $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.d,$(SRCFILES)) 
+
+#SRC := $(wildcard $(SRCDIR)/*.cpp)
+#OBJ := $(SRC:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
+CPPsrc = $(wildcard src/*.cpp) \
+		 $(wildcard src/ekf/*.cpp) \
+         $(wildcard src/Transforms/*.cpp) \
+         $(wildcard src/Jacs/*.cpp) \
+		 $(wildcard src/vision/*.cpp) \
+		 $(wildcard src/map/*.cpp) \
+		 $(wildcard src/anms/*.cpp) 
+
+APPLICATION_OBJS = $(CPPsrc:.cpp=.o)
+
+#.PHONY: all clean
+
+all: $(BIN)/$(EXECUTABLE) 
+
+$(BIN)/$(EXECUTABLE):$(APPLICATION_OBJS)
+		$(CXX) $(LIB) $(OPENCVLIBRARIES) $(LIBRARIES) -o $(BIN)/$(EXECUTABLE)
+
+$(OBJ_DIR)/%.o: $(CPPsrc)
+		$(CXX) $(CXX_FLAGS) -c $< -o $@ $(INCLUDE) 
+
+
+-include $(OBJ:.o=.d)
+
+
+
+
+
+
+
+-include $(DEPFILES)

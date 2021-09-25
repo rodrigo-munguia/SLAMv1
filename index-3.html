@@ -1,0 +1,28 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Unknown </title></head><body>
+<h1 id="rt_slam">RT_SLAM</h1>
+<p>Local EKF-SLAM with global map optimization</p>
+<p>Tested in: Ubuntu 18.04</p>
+<p>Dependencies:</p>
+<p>1.- Armadillo C++ library  (tested with version 9.900.2), http://arma.sourceforge.net/</p>
+<p>2.- OpenCV (tested with version 4.5), https://opencv.org/</p>
+<p>3.- Ceres Solver (tested with version 2.0)    http://ceres-solver.org/</p>
+<p>4.- Python (tested with version 3.6)</p>
+<p>Another dependencies (already included by source code) </p>
+<p>1.- anms (from paper: Efficient adaptive non-maximal suppression algorithms for homogeneous spatial keypoint distribution)</p>
+<p>2.- matplotlib-cpp   https://github.com/lava/matplotlib-cpp</p>
+<p>//---------------------------------------------------------------------------------------</p>
+<p>For compiling:</p>
+<p>1.- Configure Makefile for dependencies</p>
+<p>2.- run:<br />
+    - make</p>
+<p>For fresh compiling:
+    - make clean
+    - make</p>
+<p>//----------------------------------------------------------------------------------------</p>
+<p>To set openplas to run in a single thread,
+configure  the environment variable </p>
+<p>-export OPENBLAS_NUM_THREADS=1</p>
+<p>To set OPENCV to run in a single thread (Avoid OpenCL initialization )
+configure  the environment variable, </p>
+<p>-export OPENCV_OPENCL_DEVICE=disabled </p>
+</body></html>

@@ -1,0 +1,103 @@
+Date : 2021-01-18 09:08:15
+Directory : /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1
+Total : 66 files,  7783 codes, 2045 comments, 2987 blanks, all 12815 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| C++      |         62 |      7,686 |      1,999 |      2,904 |     12,589 |
+| Makefile |          2 |         64 |         44 |         58 |        166 |
+| Markdown |          1 |         26 |          0 |         21 |         47 |
+| Python   |          1 |          7 |          2 |          4 |         13 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                             | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                |         66 |      7,783 |      2,045 |      2,987 |     12,815 |
+| src                                                                              |         64 |      7,702 |      2,001 |      2,917 |     12,620 |
+| src/Jacs                                                                         |          6 |        360 |        162 |        101 |        623 |
+| src/Transforms                                                                   |          9 |        175 |        148 |         68 |        391 |
+| src/anms                                                                         |          5 |      1,619 |        478 |        431 |      2,528 |
+| src/anms/range-tree                                                              |          2 |        497 |         62 |        171 |        730 |
+| src/ekf                                                                          |         21 |        984 |        305 |        595 |      1,884 |
+| src/loop                                                                         |          3 |        531 |        188 |        243 |        962 |
+| src/map                                                                          |         10 |      1,475 |        402 |        588 |      2,465 |
+| src/matplotlib                                                                   |          2 |      1,855 |        122 |        591 |      2,568 |
+| src/vision                                                                       |          2 |        151 |        108 |         84 |        343 |
++----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                         | language | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/Makefile                            | Makefile |         55 |         44 |         49 |        148 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/README.md                           | Markdown |         26 |          0 |         21 |         47 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/Jacs/JAC_XYZ_uvr.cpp            | C++      |         41 |         34 |         31 |        106 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/Jacs/JacSystemPredictionV3b.cpp | C++      |        252 |         90 |         24 |        366 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/Jacs/JacSystemPredictionV3b.h   | C++      |          7 |         18 |          5 |         30 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/Jacs/Jac_XYZ_uvr.h              | C++      |         10 |          6 |         12 |         28 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/Jacs/Jac_uv_XYZ.h               | C++      |         10 |          6 |         13 |         29 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/Jacs/Jav_uv_XYZ.cpp             | C++      |         40 |          8 |         16 |         64 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/Transforms/Euler_to_Ra2b.cpp    | C++      |         28 |         37 |          6 |         71 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/Transforms/Euler_to_Ra2b.h      | C++      |          6 |         18 |          5 |         29 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/Transforms/Geo2ECEF.cpp         | C++      |         21 |          4 |         14 |         39 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/Transforms/Geo2ECEF.h           | C++      |          4 |          3 |          6 |         13 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/Transforms/Makefile             | Makefile |          9 |          0 |          9 |         18 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/Transforms/Ra2b_TO_Quat_a2b.cpp | C++      |         11 |         24 |          6 |         41 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/Transforms/Ra2b_TO_Quat_a2b.h   | C++      |          6 |         18 |          5 |         29 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/Transforms/quat2R.cpp           | C++      |         84 |         26 |         12 |        122 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/Transforms/quat2R.h             | C++      |          6 |         18 |          5 |         29 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/anms/anms.cpp                   | C++      |        262 |          7 |         54 |        323 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/anms/anms.h                     | C++      |         44 |          8 |         24 |         76 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/anms/nanoflann.hpp              | C++      |        816 |        401 |        182 |      1,399 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/anms/range-tree/lrtypes.h       | C++      |         12 |          0 |          5 |         17 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/anms/range-tree/ranget.h        | C++      |        485 |         62 |        166 |        713 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/ekf/altitude_update.cpp         | C++      |         39 |          4 |         18 |         61 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/ekf/altitude_update.h           | C++      |          7 |          4 |          9 |         20 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/ekf/cl_position_update.cpp      | C++      |         22 |          4 |         15 |         41 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/ekf/cl_position_update.h        | C++      |          6 |          4 |         10 |         20 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/ekf/ekf.cpp                     | C++      |         68 |          2 |         38 |        108 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/ekf/ekf.h                       | C++      |         49 |          0 |         35 |         84 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/ekf/ekf_types.h                 | C++      |         40 |          3 |         10 |         53 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/ekf/prediction.cpp              | C++      |         59 |         51 |         36 |        146 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/ekf/prediction.h                | C++      |          8 |          4 |         10 |         22 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/ekf/system_init.cpp             | C++      |         29 |         17 |         15 |         61 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/ekf/system_init.h               | C++      |          9 |          4 |         11 |         24 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/ekf/visual_delete_feats.cpp     | C++      |         49 |          8 |         41 |         98 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/ekf/visual_delete_feats.h       | C++      |         11 |          4 |         11 |         26 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/ekf/visual_init_anchors.cpp     | C++      |         67 |          7 |         52 |        126 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/ekf/visual_init_anchors.h       | C++      |         12 |          4 |          8 |         24 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/ekf/visual_init_w_range.cpp     | C++      |        145 |         83 |         82 |        310 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/ekf/visual_init_w_range.h       | C++      |         14 |          4 |         17 |         35 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/ekf/visual_match_feats.cpp      | C++      |        211 |         68 |         84 |        363 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/ekf/visual_match_feats.h        | C++      |         21 |          4 |         14 |         39 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/ekf/visual_update_f.cpp         | C++      |        104 |         22 |         64 |        190 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/ekf/visual_update_f.h           | C++      |         14 |          4 |         15 |         33 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/getData.cpp                     | C++      |        141 |         17 |         41 |        199 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/getData.h                       | C++      |         46 |         11 |         16 |         73 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/locks.h                         | C++      |         12 |          0 |         22 |         34 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/loop/cost_function_cl.h         | C++      |        122 |         19 |         55 |        196 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/loop/loop.cpp                   | C++      |        377 |        169 |        155 |        701 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/loop/loop.h                     | C++      |         32 |          0 |         33 |         65 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/main.cpp                        | C++      |        182 |         39 |         86 |        307 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/map/Add_KeyFrames.cpp           | C++      |        279 |        125 |        103 |        507 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/map/Add_KeyFrames2.cpp          | C++      |        258 |         40 |        104 |        402 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/map/cost_function.h             | C++      |        172 |         48 |         66 |        286 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/map/delete_ak.cpp               | C++      |         85 |          3 |         34 |        122 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/map/local_bundle_ajustment.cpp  | C++      |        194 |         50 |         65 |        309 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/map/local_bundle_ajustment2.cpp | C++      |        201 |         52 |         60 |        313 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/map/map.cpp                     | C++      |         63 |          8 |         24 |         95 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/map/map.h                       | C++      |         49 |          1 |         56 |        106 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/map/map_types.h                 | C++      |         17 |          1 |          9 |         27 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/map/visual_match.cpp            | C++      |        157 |         74 |         67 |        298 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/matplotlib/matplotlibcpp.h      | C++      |      1,848 |        120 |        587 |      2,555 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/matplotlib/numpy_flags.py       | Python   |          7 |          2 |          4 |         13 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/parameters.cpp                  | C++      |         70 |         10 |         20 |        100 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/parameters.h                    | C++      |        101 |         11 |         31 |        143 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/vision/vision.cpp               | C++      |        139 |         94 |         73 |        306 |
+| /home/rodrigo/Dropbox/RESEARCH/RTSLAM/SLAMv1/src/vision/vision.h                 | C++      |         12 |         14 |         11 |         37 |
+| Total                                                                            |          |      7,783 |      2,045 |      2,987 |     12,815 |
++----------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
